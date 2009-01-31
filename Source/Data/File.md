@@ -7,7 +7,7 @@ File {#File}
 > - Needs style clean-up
 {.docstatus .raw}
 
-A File object references a file or a directory on the user's system and could point to both existing and non-existing files or directories. File objects can be created by passing a path to the [getFile()][Filesystem:getFile] function under [Titanium.Filesystem][Filesystem]:
+A File object represents a file or a directory. Because File Objects only point to or reference paths to a file or directory, they could point to files and directories whether or not they exist on the user's system. File objects can be created by passing a path to the [getFile()][Filesystem:getFile] function under [Titanium.Filesystem][Filesystem]:
 
 	// Creating a File object..
 	var filePath = "C:/My Documents/MyFile.txt";
@@ -38,76 +38,76 @@ Take note that there is no Titanium.File namespace, nor is there a constructor f
 
 ### Methods:
 
-[copy][]
+[copy][] ( *to* ) : *boolean*
 : Copies a file to another location.
 
-[createTimestamp][]
+[createTimestamp][] ( ) : *number*
 : Returns a timestamp of the file's creation.
 
-[createDirectory][]
-: Creates a new directory.
+[createDirectory][] ( *recursive* ) : *boolean*
+: Creates a directory.
 
-[deleteDirectory][]
+[deleteDirectory][] ( *recursive* ) : *boolean*
 : Deletes an existing directory.
 
-[deleteFile][]
+[deleteFile][] ( ) : *boolean*
 : Deletes a file.
 
-[exists][]
+[exists][] ( ) : *boolean*
 : Checks whether or not a file exists on the user's system.
 
-[extension][]
+[extension][] ( ) : *string*
 : Returns the file's extension.
 
-[getDirectoryListing][]
+[getDirectoryListing][] ( ) : *array*
 : Returns an array of files inside a directory.
 
-[isDirectory][]
+[isDirectory][] ( ) : *boolean*
 : Checks whether the file object is a directory.
 
-[isFile][]
+[isFile][] ( ) : *boolean*
 : Checks whether the file object is a file.
 
-[isHidden][]
+[isHidden][] ( ) : *boolean*
 : Checks whether the file object is hidden.
 
-[isSymbolicLink][]
+[isSymbolicLink][] ( ) : *boolean*
 : Checks whether the file object is a symbolic link.
 
-[modificationTimestamp][]
+[modificationTimestamp][] ( ) : *string*
 : Returns a timestamp of the file's last modification.
 
-[move][]
+[move][] ( *to* ) : *boolean*
 : Moves a file to another location.
 
-[name][]
+[name][] ( ) : *string*
 : Returns the name of the file.
 
-[nativePath][]
+[nativePath][] ( ) : *string*
 : Returns the full path of the file.
 
-[parent][]
+[parent][] ( ) : *File*
 : Returns the parent directory where the file resides.
 
-[read][]
+[read][] ( ) : *string*
 : Reads the content of the file.
 
-[readLine][]
+[readLine][] ( *reset* ) : *string*
 : Reads a particular line in the file's content.
 
-[resolve][]
-: Creates a new file object.
+[resolve][] ( *path* ) : *boolean*
+: Changes the file or directory referenced by a File object.
 
-[size][]
+[size][] ( ) : *number*
 : Returns the size of the file.
 
-[spaceAvailable][]
+[spaceAvailable][] ( ) : *number*
 : Returns to space available on a user's system.
 
-[toString][]
+[toString][] ( ) : *string*
 : Returns the file's properties as a string.
 
-[write][]
+[write][] ( *data* \[, *append*\] ) : *boolean*
 : Outputs data into a file.
 
 
@@ -511,11 +511,11 @@ Calling this method on a File object referencing a directory will return null.
 
 ### Arguments:
 
-1. reset - (*boolean*: defaults to false) Setting
+1. reset - (*boolean*: defaults to false) Setting this to true will reset the pointer to the first line of the file.
 
 ### Returns:
 
-- (*string*) True if the File object references a directory.
+- (*string*) The contents of the line of a file.
 
 ### Example:
 
@@ -524,21 +524,19 @@ Calling this method on a File object referencing a directory will return null.
 Method: resolve {#File:resolve}
 -------------------------------
 
-Reads a file referenced by a File object line by line.
-
-Calling this method on a File object referencing a directory will return null.
+Changes the file or directory referenced by a File object.
 
 ### Syntax:
 
-	File.readLine(reset)
+	File.resolve(path)
 
 ### Arguments:
 
-1. reset - (*boolean*: defaults to false) Setting
+1. path - (*string*) The path to the file or directory to be referenced.
 
 ### Returns:
 
-- (*string*) True if the File object references a directory.
+- (*boolean*) True if the File object's reference has been changed.
 
 ### Example:
 
@@ -547,21 +545,19 @@ Calling this method on a File object referencing a directory will return null.
 Method: size {#File:size}
 -------------------------
 
-Reads a file referenced by a File object line by line.
-
-Calling this method on a File object referencing a directory will return null.
+Returns the size of the file or directory referenced by a File object.
 
 ### Syntax:
 
-	File.readLine(reset)
+	File.size()
 
 ### Arguments:
 
-1. reset - (*boolean*: defaults to false) Setting
+None
 
 ### Returns:
 
-- (*string*) True if the File object references a directory.
+- (*number*) The size of the file or directory referenced by the File object.
 
 ### Example:
 
@@ -570,21 +566,21 @@ Calling this method on a File object referencing a directory will return null.
 Method: spaceAvailable {#File:spaceAvailable}
 ---------------------------------------------
 
-Reads a file referenced by a File object line by line.
+Returns the space available on the directory referenced by a File object.
 
-Calling this method on a File object referencing a directory will return null.
+Calling this method on File objects referencing a file will return null.
 
 ### Syntax:
 
-	File.readLine(reset)
+	File.spaceAvailable()
 
 ### Arguments:
 
-1. reset - (*boolean*: defaults to false) Setting
+None
 
 ### Returns:
 
-- (*string*) True if the File object references a directory.
+- (*number* or *null*) The space available on the directory referenced by the File object or null if the File object references a file.
 
 ### Example:
 
@@ -593,21 +589,19 @@ Calling this method on a File object referencing a directory will return null.
 Method: toString {#File:toString}
 ---------------------------------
 
-Reads a file referenced by a File object line by line.
-
-Calling this method on a File object referencing a directory will return null.
+Returns a string representation of the file or directory referenced by a File object.
 
 ### Syntax:
 
-	File.readLine(reset)
+	File.toString()
 
 ### Arguments:
 
-1. reset - (*boolean*: defaults to false) Setting
+None
 
 ### Returns:
 
-- (*string*) True if the File object references a directory.
+- (*string*) The string representation of the file or directory referenced by the File object.
 
 ### Example:
 
@@ -616,21 +610,20 @@ Calling this method on a File object referencing a directory will return null.
 Method: write {#File:write}
 ---------------------------
 
-Reads a file referenced by a File object line by line.
-
-Calling this method on a File object referencing a directory will return null.
+Writes data to a file.
 
 ### Syntax:
 
-	File.readLine(reset)
+	File.write(data [, append])
 
 ### Arguments:
 
-1. reset - (*boolean*: defaults to false) Setting
+1. data - (*string*) The data to be written to the file.
+2. append - (*boolean*: optional, defaults to false) Whether to append the data at the end of the file. Setting this to false will overwrite anything on the file.
 
 ### Returns:
 
-- (*string*) True if the File object references a directory.
+- (*boolean*) True if the data was successfully written to the file.
 
 ### Example:
 
