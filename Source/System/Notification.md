@@ -1,16 +1,18 @@
 Notification {#Notification}
 ============================
 
-Cool description goes here.
+> **Document Status: Placeholder**  
+> - The contents of this document are yet to be written  
+> -
+{.docstatus .placeholder}
 
-### See Also:
+Titanium.Notification provides functions for working with default system notifications, as well as for working with third party notification systems like Growl and Snarl.
 
-[File][]
+### Namespace:
+
+	Titanium.Notification
 
 ### Methods:
 
 method () : returns
-: Nifty
-
-
-[File]: /Data/File
+: Description
