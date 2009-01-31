@@ -12,9 +12,12 @@ Titanium.Process provides functions for working with system processes.
 
 	Titanium.Process
 	
+### See Also:
+[Process][], [Pipe][]
+	
 ### Properties:
 
-pid \[ *string*, *read-only* \]
+pid : *string* \[*read-only*\]
 : The PID of the application
 
 ### Methods:
@@ -79,7 +82,7 @@ Checks if an environment variable is set.
 Method: launch {#Process:launch}
 --------------------------------
 
-Launches a system process and returns a [Process] object.
+Launches a system process and returns a [Process][] object.
 
 ### Syntax:
 
@@ -117,3 +120,8 @@ Sets the value of an environment variable.
 - (*boolean*) True if the environment variable's value has been successfully set.
 
 ### Example:
+
+
+
+[Process]: /System/Process
+[Pipe]: /System/Pipe
