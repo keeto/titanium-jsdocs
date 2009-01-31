@@ -1,10 +1,11 @@
 Titanium.Platform {#Titanium.Platform}
 ======================================
 
-> **Document Status: Crude**  
-> - Preliminary content has been added but not yet substantiated.  
-> -
-{.docstatus .crude}
+> **Document Status: Raw**  
+> - Some of the contents of this document are based on features and functions that are not yet fully implemented.  
+> - Additional information is needed for some content.  
+> - Needs style clean-up
+{.docstatus .raw}
 
 Titanium.Platform provides information about the platform.
 
@@ -14,23 +15,23 @@ Titanium.Platform provides information about the platform.
 
 ### Properties:
 
-[name][] : *string*
-: Creates a shortcut (alias) to a file.
+[name][] : *string* \[*read-only*\]
+: The platform name
 
-[version][] ( ) : *number*
-: Returns the system idle time.
+[version][] : *string* \[*read-only*\]
+: The platform version
 
 [architecture][] : *boolean*
-: Opens an application on the user's system
+: The platform architecture
 
 [address][] : *array*
-: Opens a file selection dialogue
+: The platform address
 
 [id][] : *boolean*
-: Opens a URL on the default web browser.
+: The platform id
 
 [processorCount][] : *boolean*
-: Opens a URL on the default web browser.
+: The number of processors
 
 
 
