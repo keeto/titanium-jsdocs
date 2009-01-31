@@ -63,6 +63,8 @@ module TitaniumDocs
 				end
 				files.each_pair do |name, title|
 					path = "#{header.gsub(/[0-9\s]*/, "")}/#{name.gsub(/[0-9\s]*/, "")}"
+					doctitle = (@document/"title").inner_html;
+					(@document/"title").inner_html = "#{doctitle}: #{title != "" ? title : path}"
 					begin
 						test = File.read(@src_path + path + ".md")
 						doc = Maruku.new(test)
@@ -78,6 +80,7 @@ module TitaniumDocs
 						end
 					rescue
 					end
+					(@document/"title").inner_html = doctitle
 				end
 			end
 		end
