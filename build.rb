@@ -9,6 +9,7 @@ module TitaniumDocs
 	class Build
 		
 		attr_accessor :nocss
+		attr_accessor :withstatus
 		attr_accessor :build_path
 		attr_accessor :src_path
 		attr_accessor :template_path
@@ -72,6 +73,7 @@ module TitaniumDocs
 				test = File.read(@src_path + path + ".md")
 				doc = Maruku.new(test)
 				(@document/"#content").inner_html = doc.to_html
+				(@document/"#content blockquote.docstatus").remove unless @withstatus
 				if @build_items.nil?
 					File.open(@build_path + path + ".html", 'w') { |fh| fh.write @document.inner_html}
 					puts "Generated: #{@build_path + path}.html"
@@ -110,6 +112,9 @@ module TitaniumDocs
 			elsif arg == "path" && value != ""
 				puts "Option: Build Path = #{value}"
 				@build_path = value
+			elsif arg == "withstatus"
+				puts "Option: With Document Status"
+				@withstatus = true
 			elsif arg == "files" && value != ""
 				puts "Option: Files = #{value}"
 				@build_items = value.split(" ")
