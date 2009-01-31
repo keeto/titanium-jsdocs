@@ -6,16 +6,13 @@ Process {#Process}
 > -
 {.docstatus .placeholder}
 
-Cool description goes here.
+Titanium.Process provides functions for working with system processes.
 
-### See Also:
+### Namespace:
 
-[File][]
+	Titanium.Process
 
 ### Methods:
 
 method () : returns
-: Nifty
-
-
-[File]: /Data/File
+: Description
