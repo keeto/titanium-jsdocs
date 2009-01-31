@@ -1,5 +1,5 @@
-Database {#Database}
-====================
+Titanium.Database {#Titanium.Database}
+======================================
 
 > **Document Status: Placeholder**  
 > - The contents of this document are yet to be written  
