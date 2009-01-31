@@ -1,16 +1,18 @@
 Database {#Database}
 ====================
 
-Cool description goes here.
+> **Document Status: Placeholder**  
+> - The contents of this document are yet to be written  
+> -
+{.docstatus .placeholder}
 
-### See Also:
+Titanium.Database provides functions for working with local databases.
 
-[File][]
+### Namespace:
+
+	Titanium.Database
 
 ### Methods:
 
 method () : returns
-: Nifty
-
-
-[File]: /Data/File
+: Description
