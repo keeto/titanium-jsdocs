@@ -1,10 +1,11 @@
 Pipe {#Pipe}
 ============
 
-> **Document Status: Crude**  
-> - Preliminary content has been added but not yet substantiated.  
-> -
-{.docstatus .crude}
+> **Document Status: Raw**  
+> - Some of the contents of this document are based on features and functions that are not yet fully implemented.  
+> - Additional information is needed for some content.  
+> - Needs style clean-up
+{.docstatus .raw}
 
 A Pipe object
 
