@@ -6,7 +6,7 @@ Platform {#Desktop}
 > -
 {.docstatus .crude}
 
-Information about the platform.
+Titanium.Platform provides information about the platform.
 
 ### Namespace:
 
