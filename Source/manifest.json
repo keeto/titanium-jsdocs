@@ -8,31 +8,38 @@
 	},
 
 	"Data": {
-		"Database": "",
-		"File": "",
-		"Filesystem": ""
+		"Titanium.Database": "",
+		"Titanium.Filesystem": {
+			"File": ""
+		}
 	},
 
 	"Media": {
-		"Media": "",
-		"Sound": ""
+		"Titanium.Media": {
+			"Sound": ""
+		}
 	},
 
 	"Network": {
-		"Network": "",
-		"TCPSocket": ""
+		"Titanium.Network": {
+			"TCPSocket": ""
+		}
 	},
 
 	"System": {
-		"Desktop": "",
-		"Notification": "",
-		"Platform": "",
-		"Process": ""
+		"Titanium.Desktop": "",
+		"Titanium.Notification": "",
+		"Titanium.Platform": "",
+		"Titanium.Process": {
+			"Process": "",
+			"Pipe": ""
+		}
 	},
 
 	"UI": {
-		"Menu": "",
-		"UI": "",
-		"Window": ""
+		"Titanium.UI": {
+			"Menu": "",
+			"Window": ""
+		}
 	}
 }
