@@ -1,5 +1,5 @@
-Media {#Media}
-==============
+Titanium.Media {#Titanium.Media}
+=================================
 
 > **Document Status: Rough**  
 > - Additional information is needed for some content.  
@@ -25,8 +25,8 @@ Titanium.Media provides functions for playing media files and create media objec
 
 
 
-Method: beep {#Media:beep}
-----------------------------
+Method: beep {#Titanium.Media:beep}
+-----------------------------------
 
 Plays a system notification sound.
 
@@ -48,8 +48,8 @@ None
 
 
 
-Method: createSound {#Media:createSound}
-----------------------------
+Method: createSound {#Titanium.Media:createSound}
+-------------------------------------------------
 
 Creates a new [Sound][] object.
 
@@ -75,7 +75,7 @@ Creates a new [Sound][] object.
 
 
 
-[beep]: #Media:beep
-[createSound]: #Media:createSound
+[beep]: #Titanium.Media:beep
+[createSound]: #Titanium.Media:createSound
 
 [Sound]: /Media/Sound

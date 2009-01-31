@@ -1,10 +1,10 @@
-Process {#Process}
-==================
+Titanium.Process {#Titanium.Process}
+====================================
 
-> **Document Status: Placeholder**  
-> - The contents of this document are yet to be written  
+> **Document Status: Crude**  
+> - Preliminary content has been added but not yet substantiated.  
 > -
-{.docstatus .placeholder}
+{.docstatus .crude}
 
 Titanium.Process provides functions for working with system processes.
 
@@ -117,57 +117,3 @@ Sets the value of an environment variable.
 - (*boolean*) True if the environment variable's value has been successfully set.
 
 ### Example:
-
-
-
-Process Object {#ProcessObj}
-============================
-
-A Process object
-
-### Properties:
-
-command \[ *string*, *read-only* \]
-: The system command of the process.
-
-pid \[ *string*, *read-only* \]
-: The PID of the process
-
-running \[ *boolean*, *read-only* \]
-: The status of the Process.
-
-err \[ *Pipe*, *read-only* \]
-: A Pipe object referencing the process' errors.
-
-out \[ *Pipe*, *read-only* \]
-: A Pipe object referencing the process' output.
-
-in \[ *Pipe*, *read-only* \]
-: A Pipe object referencing the process' input.
-
-### Methods:
-
-terminate ( *key* \[, *default* \] ) : *boolean*
-: Ends a currently running process
-
-
-Pipe Object {#ProcessObj}
-============================
-
-A Pipe object
-
-### Properties:
-
-closed \[ *boolean*, *read-only* \]
-: Whether a pipe is closed or not.
-
-### Methods:
-
-close ( ) : *boolean*
-: Closes a pipe
-
-read ( ) : *boolean*
-: Reads a pipe's data
-
-write ( *data* ) : *boolean*
-: Writes data to a pipe

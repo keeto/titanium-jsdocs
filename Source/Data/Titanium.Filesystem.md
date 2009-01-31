@@ -1,5 +1,5 @@
-Filesystem {#Filesystem}
-========================
+Titanium.Filesystem {#Titanium.Filesystem}
+==========================================
 
 > **Document Status: Raw**  
 > - Some of the contents of this document are based on features and functions that are not yet fully implemented.  
@@ -54,8 +54,8 @@ Titanium.Filesystem provides functions for creating [File][] objects as well as 
 
 
 
-Method: createTempFile {#Filesystem:createTempFile}
--------------------------
+Method: createTempFile {#Titanium.Filesystem:createTempFile}
+------------------------------------------------------------
 
 Creates a new [File][] object referencing a temporary file.
 
@@ -75,8 +75,8 @@ None
 
 
 
-Method: createTempDirectory {#Filesystem:createTempDirectory}
--------------------------
+Method: createTempDirectory {#Titanium.Filesystem:createTempDirectory}
+----------------------------------------------------------------------
 
 Creates a new [File][] object referencing a temporary directory.
 
@@ -96,8 +96,8 @@ None
 
 
 
-Method: getFile {#Filesystem:getFile}
--------------------------
+Method: getFile {#Titanium.Filesystem:getFile}
+----------------------------------------------
 
 Creates a new File object
 
@@ -117,8 +117,8 @@ Creates a new File object
 
 
 
-Method: getApplicationDirectory {#Filesystem:getApplicationDirectory}
--------------------------
+Method: getApplicationDirectory {#Titanium.Filesystem:getApplicationDirectory}
+------------------------------------------------------------------------------
 
 Returns a File object referencing the directory where the Titanium app is located.
 
@@ -138,8 +138,8 @@ None
 
 
 
-Method: getResourcesDirectory {#Filesystem:getResourcesDirectory}
--------------------------
+Method: getResourcesDirectory {#Titanium.Filesystem:getResourcesDirectory}
+--------------------------------------------------------------------------
 
 Returns a File object referencing the system resources directory.
 
@@ -159,8 +159,8 @@ None
 
 
 
-Method: getDesktopDirectory {#Filesystem:getDesktopDirectory}
--------------------------
+Method: getDesktopDirectory {#Titanium.Filesystem:getDesktopDirectory}
+----------------------------------------------------------------------
 
 Returns a File object referencing the user's desktop directory.
 
@@ -180,8 +180,8 @@ None
 
 
 
-Method: getDocumentsDirectory {#Filesystem:getDocumentsDirectory}
--------------------------
+Method: getDocumentsDirectory {#Titanium.Filesystem:getDocumentsDirectory}
+--------------------------------------------------------------------------
 
 Returns a File object referencing the user's documents directory.
 
@@ -201,8 +201,8 @@ None
 
 
 
-Method: getUserDirectory {#Filesystem:getUserDirectory}
--------------------------
+Method: getUserDirectory {#Titanium.Filesystem:getUserDirectory}
+----------------------------------------------------------------
 
 Returns a File object referencing the user's home directory
 
@@ -222,8 +222,8 @@ None
 
 
 
-Method: getLineEnding {#Filesystem:getLineEnding}
--------------------------
+Method: getLineEnding {#Titanium.Filesystem:getLineEnding}
+----------------------------------------------------------
 
 Returns the system line-ending.
 
@@ -243,8 +243,8 @@ None
 
 
 
-Method: getSeparator {#Filesystem:getSeparator}
--------------------------
+Method: getSeparator {#Titanium.Filesystem:getSeparator}
+--------------------------------------------------------
 
 Returns the system path separator.
 
@@ -264,8 +264,8 @@ None
 
 
 
-Method: getRootDirectory {#Filesystem:getRootDirectory}
--------------------------
+Method: getRootDirectory {#Titanium.Filesystem:getRootDirectory}
+----------------------------------------------------------------
 
 Returns a File object referencing the system root directory.
 
@@ -285,16 +285,16 @@ None
 
 
 
-[createTempFile]: #Filesystem:createTempFile
-[createTempDirectory]: #Filesystem:createTempDirectory
-[getFile]: #Filesystem:getFile
-[getApplicationDirectory]: #Filesystem:getApplicationDirectory
-[getResourcesDirectory]: #Filesystem:getResourcesDirectory
-[getDesktopDirectory]: #Filesystem:getDesktopDirectory
-[getDocumentsDirectory]: #Filesystem:getDocumentsDirectory
-[getUserDirectory]: #Filesystem:getUserDirectory
-[getLineEnding]: #Filesystem:getLineEnding
-[getSeparator]: #Filesystem:getSeparator
-[getRootDirectory]: #Filesystem:getRootDirectory
+[createTempFile]: #Titanium.Filesystem:createTempFile
+[createTempDirectory]: #Titanium.Filesystem:createTempDirectory
+[getFile]: #Titanium.Filesystem:getFile
+[getApplicationDirectory]: #Titanium.Filesystem:getApplicationDirectory
+[getResourcesDirectory]: #Titanium.Filesystem:getResourcesDirectory
+[getDesktopDirectory]: #Titanium.Filesystem:getDesktopDirectory
+[getDocumentsDirectory]: #Titanium.Filesystem:getDocumentsDirectory
+[getUserDirectory]: #Titanium.Filesystem:getUserDirectory
+[getLineEnding]: #Titanium.Filesystem:getLineEnding
+[getSeparator]: #Titanium.Filesystem:getSeparator
+[getRootDirectory]: #Titanium.Filesystem:getRootDirectory
 
 [File]: /Data/File

@@ -1,5 +1,5 @@
-Network {#Network}
-==================
+Titanium.Network {#Titanium.Network}
+====================================
 
 > **Document Status: Placeholder**  
 > - The contents of this document are yet to be written  

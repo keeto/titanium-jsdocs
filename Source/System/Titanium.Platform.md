@@ -1,5 +1,5 @@
-Platform {#Desktop}
-===========================
+Titanium.Platform {#Titanium.Platform}
+======================================
 
 > **Document Status: Crude**  
 > - Preliminary content has been added but not yet substantiated.  
@@ -34,9 +34,9 @@ Titanium.Platform provides information about the platform.
 
 
 
-[name]: #Platform:name
-[version]: #Platform:version
-[architecture]: #Platform:architecture
-[address]: #Platform:address
-[id]: #Platform:id
-[processorCount]: #Platform:processorCount
+[name]: #Titanium.Platform:name
+[version]: #Titanium.Platform:version
+[architecture]: #Titanium.Platform:architecture
+[address]: #Titanium.Platform:address
+[id]: #Titanium.Platform:id
+[processorCount]: #Titanium.Platform:processorCount

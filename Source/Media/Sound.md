@@ -420,5 +420,5 @@ None
 [setVolume]: #Sound:setVolume
 
 [Sound]: /Media/Sound
-[Media]: /Media/Media
-[Media:createSound]: /Media/Media#Media:createSound
+[Media]: /Media/Titanium.Media
+[Media:createSound]: /Media/Titanium.Media#Titanium.Media:createSound

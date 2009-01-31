@@ -654,7 +654,7 @@ Writes data to a file.
 [toString]: #File:toString
 [write]: #File:write
 
-[Filesystem]: /Data/Filesystem
-[Filesystem:getFile]: /Data/Filesystem#Filesystem:getFile
-[Filesystem:getUserDirectory]: /Data/Filesystem#Filesystem:getUserDirectory
-[Filesystem:getDesktopDirectory]: /Data/Filesystem#Filesystem:getDesktopDirectory
+[Filesystem]: /Data/Titanium.Filesystem
+[Filesystem:getFile]: /Data/Titanium.Filesystem#Titanium.Filesystem:getFile
+[Filesystem:getUserDirectory]: /Data/Titanium.Filesystem#Titanium.Filesystem:getUserDirectory
+[Filesystem:getDesktopDirectory]: /Data/Titanium.Filesystem#Titanium.Filesystem:getDesktopDirectory

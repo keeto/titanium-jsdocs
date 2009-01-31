@@ -1,4 +1,4 @@
-Desktop {#Desktop}
+Titanium.Desktop {#Titanium.Desktop}
 ===========================
 
 > **Document Status: Rough**  
@@ -32,8 +32,8 @@ Titanium.Desktop provides functions for opening file dialogs, applications and u
 
 
 
-Method: createShortcut {#Desktop:createShortcut}
-------------------------------------------
+Method: createShortcut {#Titanium.Desktop:createShortcut}
+---------------------------------------------------------
 
 Creates a shortcut (alias) to a file.
 
@@ -62,8 +62,8 @@ Creates a shortcut (alias) to a file.
 	
 
 
-Method: getSystemIdleTime {#Desktop:getSystemIdleTime}
-------------------------------------------------
+Method: getSystemIdleTime {#Titanium.Desktop:getSystemIdleTime}
+---------------------------------------------------------------
 
 Returns the system idle time in seconds
 
@@ -85,8 +85,8 @@ None
 
 
 
-Method: openApplication {#Desktop:openApplication}
---------------------------------------------
+Method: openApplication {#Titanium.Desktop:openApplication}
+-----------------------------------------------------------
 
 Opens an application on the user's system.
 
@@ -108,8 +108,8 @@ Opens an application on the user's system.
 
 
 
-Method: openFiles {#Desktop:openFiles}
---------------------------------
+Method: openFiles {#Titanium.Desktop:openFiles}
+-----------------------------------------------
 
 Opens a file selection dialog.
 
@@ -149,8 +149,8 @@ Opens a file selection dialog.
 
 
 
-Method: openURL {#Desktop:openURL}
-----------------------------
+Method: openURL {#Titanium.Desktop:openURL}
+-------------------------------------------
 
 Opens a URL in the default browser.
 
@@ -173,8 +173,8 @@ Opens a URL in the default browser.
 
 
 
-[createShortcut]: #Desktop:createShortcut
-[getSystemIdleTime]: #Desktop:getSystemIdleTime
-[openApplication]: #Desktop:openApplication
-[openFiles]: #Desktop:openFiles
-[openURL]: #Desktop:openURL
+[createShortcut]: #Titanium.Desktop:createShortcut
+[getSystemIdleTime]: #Titanium.Desktop:getSystemIdleTime
+[openApplication]: #Titanium.Desktop:openApplication
+[openFiles]: #Titanium.Desktop:openFiles
+[openURL]: #Titanium.Desktop:openURL
