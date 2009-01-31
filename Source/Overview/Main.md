@@ -30,54 +30,54 @@ The Javascript API
 ### Data
 
 [Database][Database]
-: The Database API
+: Provides functions for working with local databases.
 
 [File][File]
-: The File Object
+: The File object, represents a file or directory.
 
 [Filesystem][Filesystem]
-: The Filesystem
+: Provides functions for creating [File][] objects as well as utility functions for working with files and directories.
 
 ### Media
 
 [Media][Media]
-: The Media API
+: Provides functions for playing media files and creating media objects.
 
 [Sound][Sound]
-: The Sound Object
+: The Sound object, represents an audio file.
 
 ### Network
 
 [Network][Network]
-: The Network API
+: Provides functions for working with network connections, as well as creating TCPSocket objects.
 
 [TCPSocket][TCPSocket]
-: The Socket API
+: The TCPSocket object
 
 ### System
 
 [Desktop][Desktop]
-: Contains functions
+: Provides functions for opening file selection dialogs, applications and urls.
 
 [Notification][Notification]
-: The notification system
+: Provides functions for working with system notifications.
 
 [Platform][Platform]
-: Information about the user's system.
+: Provides information about the platform.
 
 [Process][Process]
-: Process API
+: Provides functions for working with system processes.
 
 ### UI
 
 [Menu][Menu]
-: Menu API
+: The Menu object, represents a native menu.
 
 [UI][UI]
-: The UI Namespace
+: Provides functions for working with native windows and menus.
 
 [Window][Window]
-: Window System
+: The Window object, represents a native window.
 
 
 
