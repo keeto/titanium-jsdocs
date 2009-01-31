@@ -12,6 +12,7 @@ module TitaniumDocs
 		attr_accessor :build_path
 		attr_accessor :src_path
 		attr_accessor :template_path
+		attr_accessor :build_items
 		
 		def initialize(path = File.dirname(__FILE__))
 			@path = path
@@ -56,16 +57,25 @@ module TitaniumDocs
 		
 		def parse_docs
 			@manifest.each_pair do |header, files|
-				FileUtils.remove_dir(@build_path + header.gsub(/[0-9\s]*/, "")) unless not File.exists?(@build_path + header.gsub(/[0-9\s]*/, ""))
-				FileUtils.mkdir(@build_path + header.gsub(/[0-9\s]*/, ""))
+				if @build_items.nil?
+					FileUtils.remove_dir(@build_path + header.gsub(/[0-9\s]*/, "")) unless not File.exists?(@build_path + header.gsub(/[0-9\s]*/, ""))
+					FileUtils.mkdir(@build_path + header.gsub(/[0-9\s]*/, ""))
+				end
 				files.each_pair do |name, title|
 					path = "#{header.gsub(/[0-9\s]*/, "")}/#{name.gsub(/[0-9\s]*/, "")}"
 					begin
 						test = File.read(@src_path + path + ".md")
 						doc = Maruku.new(test)
 						(@document/"#content").inner_html = doc.to_html
-						File.open(@build_path + path + ".html", 'w') { |fh| fh.write @document.inner_html}
-						puts "Generated: #{@build_path + path}.html"
+						if @build_items.nil?
+							File.open(@build_path + path + ".html", 'w') { |fh| fh.write @document.inner_html}
+							puts "Generated: #{@build_path + path}.html"
+						else
+							if @build_items.include?(name.gsub(/[0-9\s]*/, ""))
+								File.open(@build_path + path + ".html", 'w') { |fh| fh.write @document.inner_html}
+								puts "Generated: #{@build_path + path}.html"
+							end
+						end
 					rescue
 					end
 				end
@@ -79,6 +89,9 @@ module TitaniumDocs
 			elsif arg == "path" && value != ""
 				puts "Option: Build Path = #{value}"
 				@build_path = value
+			elsif arg == "files" && value != ""
+				puts "Option: Files = #{value}"
+				@build_items = value.split(" ")
 			else
 			end
 		end
