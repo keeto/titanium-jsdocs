@@ -1,0 +1,667 @@
+File {#File}
+============
+
+> **Document Status: Raw**  
+> - Some of the contents of this document are based on features and functions that are not yet fully implemented.  
+> - Additional information is needed for some content.  
+> - Needs style clean-up
+{.docstatus .raw}
+
+A File object references a file or a directory on the user's system and could point to both existing and non-existing files or directories. File objects can be created by passing a path to the [getFile()][Filesystem:getFile] function under [Titanium.Filesystem][Filesystem]:
+
+	// Creating a File object..
+	var filePath = "C:/My Documents/MyFile.txt";
+	var file = Titanium.Filesystem.getFile(filePath);
+	
+	// A File object pointing to a directory..
+	var dirPath = "C:/Program Files/Titanium/backup";
+	var dir = Titanium.Filesystem.getFile(dirPath);
+
+Other [Titanium.Filesystem][Filesystem] methods, such as [getUserDirectory()][Filesystem:getUserDirectory] and [getDesktopDirectory()][Filesystem:getDesktopDirectory], also return File objects. You can also create File objects pointing to temporary files which are useful for storing information that shouldn't be kept on the user's system:
+
+	// Temporary File objects..
+	var tempFile = Titanium.Filesystem.createTempFile();
+	var tempDir = Titanium.Filesystem.createTempDir();
+
+Take note that there is no Titanium.File namespace, nor is there a constructor function or a File class, so the following lines won't work:
+
+	// There's no Titanium.File..
+	var myFile = Titanium.File(path);
+
+	// Do not use "new" because getFile is not a
+	// constructor function..
+	var myFile2 = new Titanium.Filesystem.getFile(url);
+
+### See Also:
+
+[Filesystem][]
+
+### Methods:
+
+[copy][]
+: Copies a file to another location.
+
+[createTimestamp][]
+: Returns a timestamp of the file's creation.
+
+[createDirectory][]
+: Creates a new directory.
+
+[deleteDirectory][]
+: Deletes an existing directory.
+
+[deleteFile][]
+: Deletes a file.
+
+[exists][]
+: Checks whether or not a file exists on the user's system.
+
+[extension][]
+: Returns the file's extension.
+
+[getDirectoryListing][]
+: Returns an array of files inside a directory.
+
+[isDirectory][]
+: Checks whether the file object is a directory.
+
+[isFile][]
+: Checks whether the file object is a file.
+
+[isHidden][]
+: Checks whether the file object is hidden.
+
+[isSymbolicLink][]
+: Checks whether the file object is a symbolic link.
+
+[modificationTimestamp][]
+: Returns a timestamp of the file's last modification.
+
+[move][]
+: Moves a file to another location.
+
+[name][]
+: Returns the name of the file.
+
+[nativePath][]
+: Returns the full path of the file.
+
+[parent][]
+: Returns the parent directory where the file resides.
+
+[read][]
+: Reads the content of the file.
+
+[readLine][]
+: Reads a particular line in the file's content.
+
+[resolve][]
+: Creates a new file object.
+
+[size][]
+: Returns the size of the file.
+
+[spaceAvailable][]
+: Returns to space available on a user's system.
+
+[toString][]
+: Returns the file's properties as a string.
+
+[write][]
+: Outputs data into a file.
+
+
+
+Method: copy {#File:copy}
+-------------------------
+
+Copies a file to another location.
+
+### Syntax:
+
+	File.copy(to)
+
+### Arguments:
+
+1. to - (*string*) The destination path.
+
+### Returns:
+
+- (*boolean*) True if the file was successfully copied to the destination.
+
+### Example:
+
+
+
+Method: createTimestamp {#File:createTimestamp}
+-----------------------------------------------
+
+Returns the file's creation timestamp.
+
+### Syntax:
+
+	File.createTimestamp()
+
+### Arguments:
+
+None
+
+### Returns:
+
+- (*number*) The creation timestamp of the file.
+
+### Example:
+
+
+
+Method: createDirectory {#File:createDirectory}
+-----------------------------------------------
+
+Creates a directory.
+
+### Syntax:
+
+	File.createDirectory(recursive)
+
+### Arguments:
+
+1. recursive - (*boolean*: defaults to false) Setting this to true will create parent directories if they do not exists.
+
+### Returns:
+
+- (*boolean*) True if the directory was successfully created.
+
+### Example:
+
+
+
+Method: deleteDirectory {#File:deleteDirectory}
+-----------------------------------------------
+
+Deletes an existing directory.
+
+### Syntax:
+
+	File.deleteDirectory(recursive)
+
+### Arguments:
+
+1. recursive - (*string*) Setting this to true will delete all contents of the directory together with the directory itself.
+
+### Returns:
+
+- (*boolean*) True if the directory was successfully deleted.
+
+### Example:
+
+
+
+Method: deleteFile {#File:deleteFile}
+-------------------------------------
+
+Deletes a file.
+
+### Syntax:
+
+	File.deleteFile()
+
+### Arguments:
+
+None
+
+### Returns:
+
+- (*boolean*) True if the file was successfully deleted.
+
+### Example:
+
+
+
+Method: exists {#File:exists}
+-----------------------------
+
+Returns whether or not the File object points to a file that exists on the user's system.
+
+### Syntax:
+
+	File.exists()
+
+### Arguments:
+
+None
+
+### Returns:
+
+- (*boolean*) True if the File object points to a file that exists on the user's system.
+
+### Example:
+
+
+
+Method: extension {#File:extension}
+-----------------------------------
+
+Returns the extension of the File object's referenced file.
+
+Calling this method on a File object referencing a directory will return null.
+
+### Syntax:
+
+	File.extension()
+
+### Arguments:
+
+None
+
+### Returns:
+
+- (*string* or *null*) The extension of the File object's referenced file or null if the File object references a directory.
+
+### Example:
+
+
+
+Method: getDirectoryListing {#File:getDirectoryListing}
+-------------------------------------------------------
+
+Returns an array of File objects referencing the files and directories inside the directory referenced by the File object.
+
+Calling this method on a File object referencing a file or a directory that doesn't exist on the user's system will return null.
+
+### Syntax:
+
+	File.copy(to)
+
+### Arguments:
+
+1. to - (*string*) The destination path.
+
+### Returns:
+
+- (*array* or *null*) An array of File objects referencing the files and directories inside the File object's referenced directory or null if the File object references a file or a directory that doesn't exists.
+
+### Example:
+
+
+
+Method: isDirectory {#File:isDirectory}
+---------------------------------------
+
+Checks whether a File object references a directory.
+
+### Syntax:
+
+	File.isDirectory()
+
+### Arguments:
+
+None
+
+### Returns:
+
+- (*boolean*) True if the File object references a directory.
+
+### Example:
+
+
+
+Method: isFile {#File:isFile}
+-----------------------------
+
+Checks whether a File object references a file.
+
+### Syntax:
+
+	File.isFile()
+
+### Arguments:
+
+None
+
+### Returns:
+
+- (*boolean*) True if the File object references a file.
+
+### Example:
+
+
+
+Method: isHidden {#File:isDirectory}
+------------------------------------
+
+Checks whether a File object references a hidden file or directory.
+
+### Syntax:
+
+	File.isHidden()
+
+### Arguments:
+
+None
+
+### Returns:
+
+- (*boolean*) True if the File object references a hidden file or directory.
+
+### Example:
+
+
+
+Method: isSymbolicLink {#File:isSymbolicLink}
+---------------------------------------------
+
+Checks whether a File object references a symbolic link.
+
+### Syntax:
+
+	File.isSymbolicLink()
+
+### Arguments:
+
+None
+
+### Returns:
+
+- (*boolean*) True if the File object references a symbolic link.
+
+### Example:
+
+
+
+Method: modificationTimestamp {#File:modificationTimestamp}
+-----------------------------------------------------------
+
+Returns the file's modification timestamp.
+
+### Syntax:
+
+	File.modificationTimestamp()
+
+### Arguments:
+
+None
+
+### Returns:
+
+- (*number*) The file's modification timestamp.
+
+### Example:
+
+
+
+Method: move {#File:move}
+-------------------------
+
+Moves a file to another location.
+
+### Syntax:
+
+	File.move(to)
+
+### Arguments:
+
+1. to - (*string*) The destination path.
+
+### Returns:
+
+- (*boolean*) True if the file was successfully moved to the destination.
+
+### Example:  
+  
+  
+  
+Method: name {#File:name}
+-------------------------
+
+Returns the name of the file or directory referenced by a File object
+
+### Syntax:
+
+	File.name()
+
+### Arguments:
+
+None
+
+### Returns:
+
+- (*string*) The name of the file or directory referenced by the File object.
+
+### Example:
+
+
+
+Method: nativePath {#File:nativePath}
+-------------------------------------
+
+Returns the full, absolute path of the file or directory referenced by a File object.
+
+### Syntax:
+
+	File.nativePath()
+
+### Arguments:
+
+None
+
+### Returns:
+
+- (*string*) The full, absolute path of the file or directory referenced by the File object.
+
+### Example:
+
+
+
+Method: parent {#File:parent}
+-----------------------------
+
+Returns a File object referencing the File object's parent directory.
+
+Calling this method on a File object that references the root-most directory of a user's system returns a new copy of the File object.
+
+### Syntax:
+
+	File.parent()
+
+### Arguments:
+
+None
+
+### Returns:
+
+- (*object*) A File object referencing the File object's parent directory.
+
+### Example:
+
+
+
+Method: read {#File:read}
+-------------------------
+
+Reads the contents of a file referenced by a File Object and returns it as a string.
+
+Calling this method on a File object referencing a directory will return null.
+
+### Syntax:
+
+	File.read()
+
+### Arguments:
+
+None
+
+### Returns:
+
+- (*string* or *null*) A string containing the contents of the file or null if the File object references a directory.
+
+### Example:
+
+
+
+Method: readLine {#File:readLine}
+---------------------------------
+
+Reads a file referenced by a File object line by line.
+
+Calling this method on a File object referencing a directory will return null.
+
+### Syntax:
+
+	File.readLine(reset)
+
+### Arguments:
+
+1. reset - (*boolean*: defaults to false) Setting
+
+### Returns:
+
+- (*string*) True if the File object references a directory.
+
+### Example:
+
+
+
+Method: resolve {#File:resolve}
+-------------------------------
+
+Reads a file referenced by a File object line by line.
+
+Calling this method on a File object referencing a directory will return null.
+
+### Syntax:
+
+	File.readLine(reset)
+
+### Arguments:
+
+1. reset - (*boolean*: defaults to false) Setting
+
+### Returns:
+
+- (*string*) True if the File object references a directory.
+
+### Example:
+
+
+
+Method: size {#File:size}
+-------------------------
+
+Reads a file referenced by a File object line by line.
+
+Calling this method on a File object referencing a directory will return null.
+
+### Syntax:
+
+	File.readLine(reset)
+
+### Arguments:
+
+1. reset - (*boolean*: defaults to false) Setting
+
+### Returns:
+
+- (*string*) True if the File object references a directory.
+
+### Example:
+
+
+
+Method: spaceAvailable {#File:spaceAvailable}
+---------------------------------------------
+
+Reads a file referenced by a File object line by line.
+
+Calling this method on a File object referencing a directory will return null.
+
+### Syntax:
+
+	File.readLine(reset)
+
+### Arguments:
+
+1. reset - (*boolean*: defaults to false) Setting
+
+### Returns:
+
+- (*string*) True if the File object references a directory.
+
+### Example:
+
+
+
+Method: toString {#File:toString}
+---------------------------------
+
+Reads a file referenced by a File object line by line.
+
+Calling this method on a File object referencing a directory will return null.
+
+### Syntax:
+
+	File.readLine(reset)
+
+### Arguments:
+
+1. reset - (*boolean*: defaults to false) Setting
+
+### Returns:
+
+- (*string*) True if the File object references a directory.
+
+### Example:
+
+
+
+Method: write {#File:write}
+---------------------------
+
+Reads a file referenced by a File object line by line.
+
+Calling this method on a File object referencing a directory will return null.
+
+### Syntax:
+
+	File.readLine(reset)
+
+### Arguments:
+
+1. reset - (*boolean*: defaults to false) Setting
+
+### Returns:
+
+- (*string*) True if the File object references a directory.
+
+### Example:
+
+
+
+[copy]: #File:copy
+[createTimestamp]: #File:createTimestamp
+[createDirectory]: #File:createDirectory
+[deleteDirectory]: #File:deleteDirectory
+[deleteFile]: #File:deleteFile
+[exists]: #File:exists
+[extension]: #File:extension
+[getDirectoryListing]: #File:getDirectoryListing
+[isDirectory]: #File:isDirectory
+[isFile]: #File:isFile
+[isHidden]: #File:isHidden
+[isSymbolicLink]: #File:isSymbolicLink
+[modificationTimestamp]: #File:modificationTimestamp
+[move]: #File:move
+[name]: #File:name
+[nativePath]: #File:nativePath
+[parent]: #File:parent
+[read]: #File:read
+[readLine]: #File:readLine
+[resolve]: #File:resolve
+[size]: #File:size
+[spaceAvailable]: #File:spaceAvailable
+[toString]: #File:toString
+[write]: #File:write
+
+[Filesystem]: /Data/Filesystem
+[Filesystem:getFile]: /Data/Filesystem#Filesystem:getFile
+[Filesystem:getUserDirectory]: /Data/Filesystem#Filesystem:getUserDirectory
+[Filesystem:getDesktopDirectory]: /Data/Filesystem#Filesystem:getDesktopDirectory
