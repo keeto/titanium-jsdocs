@@ -8,6 +8,10 @@ Network {#Network}
 
 Titanium.Network provides functions for working with networks, as well as creating TCPSockets.
 
+### Namespace:
+
+	Titanium.Network
+
 ### See Also:
 
 [Socket][]
@@ -15,7 +19,7 @@ Titanium.Network provides functions for working with networks, as well as creati
 ### Methods:
 
 method () : returns
-: Nifty
+: Description
 
 
 [Socket]: /Network/Socket

@@ -1,16 +1,21 @@
-Socket {#Socket}
-================
+TCPSocket {#Socket}
+===================
 
-Cool description goes here.
+> **Document Status: Placeholder**  
+> - The contents of this document are yet to be written  
+> -
+{.docstatus .placeholder}
+
+A TCPSocket Object
 
 ### See Also:
 
-[File][]
+[Network][]
 
 ### Methods:
 
 method () : returns
-: Nifty
+: Description
 
 
-[File]: /Data/File
+[Network]: /Network/Network
