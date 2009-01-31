@@ -80,6 +80,14 @@ div.clarity {
 	border-bottom: 1px #ccc solid;
 }
 
+#navigation ul ul {
+	margin-bottom: 0;
+}
+
+#navigation ul ul li {
+	padding-left: 15px;
+}
+
 #content {
 	background: #fff;
 	width: 600px;
@@ -176,6 +184,35 @@ div.clarity {
 	border-left: 2px solid #3F5564;
 	padding-left: 10px;
 }
+
+	#content blockquote.docstatus {
+		padding: 1px 10px 1px 10px;
+	}
+	
+	#content blockquote.placeholder {
+		background: #FFC2C4;
+		border-left: 2px solid #FF5C62;
+	}
+	
+	#content blockquote.crude {
+		background: #FDEEB3;
+		border-left: 2px solid #FAD850;
+	}
+	
+	#content blockquote.raw {
+		background: #FFFFC2;
+		border-left: 2px solid #FFFF5C;
+	}
+	
+	#content blockquote.rough {
+		background: #D0FFC2;
+		border-left: 2px solid #EEFDB3;
+	}
+	
+	#content blockquote.final {
+		background: #3985ED;
+		border-left: 2px solid #96BEF5;
+	}
 
 #footer {
 	margin-top: 50px;
