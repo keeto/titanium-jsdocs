@@ -13,13 +13,21 @@ Building the Docs
 
 Included is a builder script (build.rb) which should be run on the command line:
 
-	./build.rb [options]
+	build.rb [options]
 	
 	options:
 	--path			The path to build the documentation (default: <DOCSDIR>/Build/).
 	--withstatus	Includes the doc status blockquotes.
 	--files="FILES"	The files to generate separated by spaces 
 					(Ex. --files="Titanium.Process Sound File").
+					
+	On Windows:
+	ruby build.rb [options]
+	
+	On *nix
+	./build.rb [options]
+					
+You'll need to have ruby and rubygems installed on your system to run the builder script, as well as the following gems: hpricot, maruku, and json.
 
 
 License and Copyright
