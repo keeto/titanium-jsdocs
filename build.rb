@@ -22,12 +22,25 @@ module TitaniumDocs
 			# 			puts @doc
 		end
 		
+		def move_assets
+			begin
+				FileUtils.cp_r @assets_path + "css/", @build_path, {:remove_destination => true}
+				puts "Copying: css"
+				FileUtils.cp_r @assets_path + "scripts/", @build_path, {:remove_destination => true}
+				puts "Copying: scripts"
+				FileUtils.cp_r @assets_path + "images/", @build_path, {:remove_destination => true}
+				puts "Copying: images"
+			rescue
+			end
+		end
+		
 		def prepare_template
 			puts "Preparing template.."
 			@src_path ||= @path + "/Source/"
 			@build_path ||= @path + "/Build/"
 			@manifest = JSON.load(open( @src_path + "manifest.json" ))
-			@template_path ||= @path + "/Assets/templates/"
+			@assets_path ||= @path + "/Assets/"
+			@template_path ||= @assets_path + "templates/"
 			
 			@template_main = @template_path + "main.html"
 			@template_nav = @template_path + "nav.html"
@@ -132,6 +145,9 @@ module TitaniumDocs
 			docbuild.prepare_template
 			docbuild.parse_nav
 			docbuild.parse_docs
+			docbuild.move_assets
+			
+			puts "Done!"
 		end
 		
 	end
