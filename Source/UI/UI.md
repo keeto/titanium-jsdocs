@@ -1,16 +1,22 @@
 UI {#UI}
 ========
 
-Cool description goes here.
+> **Document Status: Placeholder**  
+> - The contents of this document are yet to be written  
+> -
+{.docstatus .placeholder}
+
+Titanium.UI provides functions for working with native windows and menus.
 
 ### See Also:
 
-[File][]
+[Menu][], [Window][]
 
 ### Methods:
 
 method () : returns
-: Nifty
+: Description
 
 
-[File]: /Data/File
+[Menu]: /UI/Menu
+[Window]: /UI/Window
