@@ -3,7 +3,7 @@ Titanium Javascript API Reference
 
 Welcome to the Javascript API Reference for Appcelerator Titanium PR2.
 
-This guide is divided into two parts. Part one is a short overview of the Titanium platform that introduces the basic concepts you'll need in developing Titanium apps using Javascript. Part two is the actual Javascript API reference containing information on all public Titanium APIs accessible via Javascript.
+This guide is divided into two parts. Part one is a short overview of the Titanium platform that introduces the basic concepts you'll need to know to develop Titanium apps using Javascript. Part two is the actual Javascript API reference containing information on all public Titanium APIs accessible via Javascript.
 
 > **Important Note!** This reference is a rough draft. The internals of the Titanium platform, the runtime implementation and Javascript API may change within the course of development and the information contained here may become invalid and unusable in the future. The official, finalized documentation will be released together with Titanium PR2.
 > 
@@ -29,54 +29,60 @@ The Javascript API
 
 ### Data
 
-[Database][Database]
+[Titanium.Database][]
 : Provides functions for working with local databases.
 
-[File][File]
-: The File object, represents a file or directory.
-
-[Filesystem][Filesystem]
+[Titanium.Filesystem][]
 : Provides functions for creating [File][] objects as well as utility functions for working with files and directories.
+
+[File][]
+: The File object, represents a file or directory.
 
 ### Media
 
-[Media][Media]
+[Titanium.Media][]
 : Provides functions for playing media files and creating media objects.
 
-[Sound][Sound]
+[Sound][]
 : The Sound object, represents an audio file.
 
 ### Network
 
-[Network][Network]
+[Titanium.Network][]
 : Provides functions for working with network connections, as well as creating TCPSocket objects.
 
-[TCPSocket][TCPSocket]
+[TCPSocket][]
 : The TCPSocket object
 
 ### System
 
-[Desktop][Desktop]
+[Titanium.Desktop][]
 : Provides functions for opening file selection dialogs, applications and urls.
 
-[Notification][Notification]
+[Titanium.Notification][]
 : Provides functions for working with system notifications.
 
-[Platform][Platform]
+[Titanium.Platform][]
 : Provides information about the platform.
 
-[Process][Process]
+[Titanium.Process][]
 : Provides functions for working with system processes.
+
+[Process][]
+: The Process object
+
+[Pipe][]
+: The Pipe object
 
 ### UI
 
-[Menu][Menu]
-: The Menu object, represents a native menu.
-
-[UI][UI]
+[Titanium.UI][]
 : Provides functions for working with native windows and menus.
 
-[Window][Window]
+[Menu][]
+: The Menu object, represents a native menu.
+
+[Window][]
 : The Window object, represents a native window.
 
 
@@ -86,21 +92,23 @@ The Javascript API
 [Contributing]: /Overview/Contributing
 [License]: /Overview/Licens
 
-[Database]: /Data/Database
+[Titanium.Database]: /Data/Titanium.Database
+[Titanium.Filesystem]: /Data/Titanium.Filesystem
 [File]: /Data/File
-[Filesystem]: /Data/Filesystem
 
-[Media]: /Media/Media
+[Titanium.Media]: /Media/Titanium.Media
 [Sound]: /Media/Sound
 
-[Network]: /Network/Network
+[Titanium.Network]: /NetworkTitanium./Network
 [TCPSocket]: /Network/TCPSocket
 
-[Desktop]: /System/Desktop
-[Notification]: /System/Notification
-[Platform]: /System/Platform
+[Titanium.Desktop]: /System/Titanium.Desktop
+[Titanium.Notification]: /System/Titanium.Notification
+[Titanium.Platform]: /System/Titanium.Platform
+[Titanium.Process]: /System/Titanium.Process
 [Process]: /System/Process
+[Pipe]: /System/Pipe
 
-[UI]: /UI/UI
+[Titanium.UI]: /UI/Titanium.UI
 [Menu]: /UI/Menu
 [Window]: /UI/Window
