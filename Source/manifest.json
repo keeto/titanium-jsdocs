@@ -22,6 +22,8 @@
 
 	"Network": {
 		"Titanium.Network": {
+			"Host": "",
+			"IPAddress": "",
 			"TCPSocket": ""
 		}
 	},
