@@ -8,7 +8,7 @@ require "fileutils"
 module TitaniumDocs
 	class Build
 		
-		attr_accessor :nocss
+		attr_accessor :noassets
 		attr_accessor :withstatus
 		attr_accessor :build_path
 		attr_accessor :src_path
@@ -23,14 +23,16 @@ module TitaniumDocs
 		end
 		
 		def move_assets
-			begin
-				FileUtils.cp_r @assets_path + "css/", @build_path, {:remove_destination => true}
-				puts "Copying: css"
-				FileUtils.cp_r @assets_path + "scripts/", @build_path, {:remove_destination => true}
-				puts "Copying: scripts"
-				FileUtils.cp_r @assets_path + "images/", @build_path, {:remove_destination => true}
-				puts "Copying: images"
-			rescue
+			if not @noassets
+				begin
+					FileUtils.cp_r @assets_path + "css/", @build_path, {:remove_destination => true}
+					puts "Copying: css"
+					FileUtils.cp_r @assets_path + "scripts/", @build_path, {:remove_destination => true}
+					puts "Copying: scripts"
+					FileUtils.cp_r @assets_path + "images/", @build_path, {:remove_destination => true}
+					puts "Copying: images"
+				rescue
+				end
 			end
 		end
 		
@@ -119,9 +121,9 @@ module TitaniumDocs
 		end
 		
 		def set_options(arg, value)
-			if arg == "nocss"
-				puts "Option: No CSS File"
-				@nocss = true
+			if arg == "noassets"
+				puts "Option: No Assets"
+				@noassets = true
 			elsif arg == "path" && value != ""
 				puts "Option: Build Path = #{value}"
 				@build_path = value
