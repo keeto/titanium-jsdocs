@@ -1,7 +1,7 @@
 Titanium {#Titanium}
 ====================
 
-The global Titanium namespace.
+The global Titanium namespace from which all other API objects can be accessed.
 
 ### Namespace:
 
@@ -16,7 +16,7 @@ The global Titanium namespace.
 : Provides functions for working with local databases.
 
 [Desktop][]
-: Desktop
+: Provides functions for opening file selection dialogs, applications and urls.
 
 [Filesystem][]
 : Provides functions for working with files and directories.
