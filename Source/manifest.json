@@ -6,6 +6,11 @@
 		"4 Contributing": "Contributing to this Guide",
 		"5 License": "License and Copyright"
 	},
+	
+	"Core": {
+		"Core": "Titanium",
+		"Titanium.App": ""
+	},
 
 	"Data": {
 		"Titanium.Database": "",
