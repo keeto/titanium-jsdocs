@@ -1,14 +1,14 @@
 {
 	"01 Overview": {
 		"1 Main": "Main Page",
-		"2 Titanium": "Introduction to Titanium",
+		"2 Introduction": "Introduction to Titanium",
 		"3 Organization": "How this Guide is Organized",
 		"4 Contributing": "Contributing to this Guide",
 		"5 License": "License and Copyright"
 	},
 	
 	"Core": {
-		"Core": "Titanium",
+		"Titanium": "",
 		"Titanium.App": ""
 	},
 
