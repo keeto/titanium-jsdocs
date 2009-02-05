@@ -46,6 +46,7 @@
 	"UI": {
 		"Titanium.UI": {
 			"Menu": "",
+			"TrayItem": "",
 			"Window": ""
 		}
 	}
