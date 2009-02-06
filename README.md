@@ -33,7 +33,7 @@ Contributing
 
 The Titanium Javascript API Reference is a community project and everyone is invited to contribute and improve the docs. To help, just fork this project, do your changes and commit it back to your fork. Be sure to send us a pull request so we'll know about your changes and integrate them back into the main repo.
 
-To ensure quality and consistency, there are a few guidelines you'll need to follow. We have a basic Contributers' Guide that details the formatting and style conventions for the documents, as well as a few other guidelines needed to make the process smoother. The Contributers' Guide is included in the repo and is also posted on the Github wiki pages of project.
+To ensure quality and consistency, there are a few guidelines you'll need to follow. We have a basic Contributers' Guide that details the formatting and style conventions for the documents, as well as a few other guidelines needed to make the process smoother. The Contributers' Guide is included in the repo (CONTRIBGUIDE.md) and is also posted on the Github wiki pages of project.
 
 
 License and Copyright
