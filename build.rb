@@ -8,76 +8,78 @@ require "fileutils"
 module TitaniumDocs
 	class Build
 		
-		attr_accessor :noassets
-		attr_accessor :withstatus
-		attr_accessor :build_path
-		attr_accessor :src_path
-		attr_accessor :template_path
-		attr_accessor :build_items
-		
 		def initialize(path = File.dirname(__FILE__))
 			@path = path
-			# @doc = open("Assets/template.html") { |f| Hpricot(f) }
-			# 			(@doc/"#content").inner_html += "Yep"
-			# 			puts @doc
+			@src_path ||= @path + "/Source/"
+			@build_path ||= @path + "/Build/"
+			@assets_path ||= @path + "/Assets/"
 		end
 		
 		def move_assets
-			if not @noassets
-				begin
-					FileUtils.cp_r @assets_path + "css/", @build_path, {:remove_destination => true}
-					puts "Copying: css"
-					FileUtils.cp_r @assets_path + "scripts/", @build_path, {:remove_destination => true}
-					puts "Copying: scripts"
-					FileUtils.cp_r @assets_path + "images/", @build_path, {:remove_destination => true}
-					puts "Copying: images"
-				rescue
+			if not @no_assets
+				["css/", "scripts/", "images/"].each do |asset|
+					begin
+						FileUtils.cp_r @assets_path + asset, @build_path, {:remove_destination => true}
+						puts "Copying: #{asset}"
+					rescue
+						puts "Error in copying #{asset}"
+					end
 				end
 			end
 		end
 		
 		def prepare_template
 			puts "Preparing template.."
-			@src_path ||= @path + "/Source/"
-			@build_path ||= @path + "/Build/"
-			@manifest = JSON.load(open( @src_path + "manifest.json" ))
-			@assets_path ||= @path + "/Assets/"
+			
 			@template_path ||= @assets_path + "templates/"
 			
-			@template_main = @template_path + "main.html"
-			@template_nav = @template_path + "nav.html"
-			@template_footer = @template_path + "footer.html"
+			template_main = @template_path + "main.html"
+			template_nav = @template_path + "nav.html"
+			template_footer = @template_path + "footer.html"
 			
-			@document = open(@template_main) { |f| Hpricot(f) }
-			@nav = open(@template_nav) { |f| Hpricot(f) }
-			@footer = open(@template_footer) { |f| Hpricot(f) }
+			@document = open(template_main) { |f| Hpricot(f) }
+			@nav = open(template_nav) { |f| Hpricot(f) }
+			@footer = open(template_footer) { |f| Hpricot(f) }
 			
 			(@document/"#navigation").inner_html = @nav.inner_html
 			(@document/"#footer").inner_html = @footer.inner_html
 		end
 		
 		def parse_nav
-			nav_html = ""
-			
-			@manifest.each_pair do |header, files|
-				nav_html += "<h2>#{header.gsub(/[0-9\s]*/, "")}</h2>\n"
-				nav_html += "<ul>\n"
-				files.each_pair do |name, title|
-					nav_link = "../#{header.gsub(/[0-9\s]*/, "")}/#{name.gsub(/[0-9\s]*/, "")}"
-					nav_html += "<li><a href=\"#{nav_link}\" >#{title != "" && !title.respond_to?(:each_pair) ? title : name.gsub(/[0-9\s]*/, "")}</a></li>\n"
-					if title.respond_to?(:each_pair)
-						nav_html += "<ul>\n"
-						title.each_pair do |sub, item|
-							nav_link = "../#{header.gsub(/[0-9\s]*/, "")}/#{sub.gsub(/[0-9\s]*/, "")}"
-							nav_html += "<li><a href=\"#{nav_link}\" >#{item != "" ? item : sub.gsub(/[0-9\s]*/, "")}</a></li>\n"
+			@manifest = JSON.load(open( @src_path + "manifest.json" ))
+			if @build_nav
+				
+				nav_html = ""
+				
+				@manifest.each_pair do |header, files|
+					header = header.gsub(/[0-9\s]*/, "")
+					nav_html += "<h2>#{header}</h2>\n<ul>\n"
+					
+					files.each_pair do |name, title|
+						name = name.gsub(/[0-9\s]*/, "")
+						ptitle = title != "" && !title.respond_to?(:each_pair) ? title : name
+						
+						nav_html += nav_item(header, name, ptitle)
+						
+						if title.respond_to?(:each_pair)		
+							nav_html += "<ul>\n"
+							title.each_pair do |sub, item|
+								sub = sub.gsub(/[0-9\s]*/, "")
+								item = item != "" ? item : sub
+								nav_html += nav_item(header, sub, item)
+							end
+							nav_html += "</ul>\n"
 						end
-						nav_html += "</ul>\n"
 					end
+					
+					nav_html += "</ul>\n"
 				end
-				nav_html += "</ul>\n"
+				(@document/"#navlinks").inner_html += "\n#{nav_html}"
 			end
-			#puts nav_html
-			(@document/"#navigation").inner_html += "\n#{nav_html}"
+		end
+		
+		def nav_item(header, name, title)
+			return "<li><a href=\"/#{header}/#{name}\" >#{title}</a></li>\n"
 		end
 		
 		def parse_doc(header, name, title)
@@ -88,7 +90,7 @@ module TitaniumDocs
 				test = File.read(@src_path + path + ".md")
 				doc = Maruku.new(test)
 				(@document/"#content").inner_html = doc.to_html
-				(@document/"#content blockquote.docstatus").remove unless @withstatus
+				(@document/"#content blockquote.docstatus").remove unless @with_status
 				if @build_items.nil?
 					File.open(@build_path + path + ".html", 'w') { |fh| fh.write @document.inner_html}
 					puts "Generated: #{@build_path + path}.html"
@@ -123,13 +125,19 @@ module TitaniumDocs
 		def set_options(arg, value)
 			if arg == "noassets"
 				puts "Option: No Assets"
-				@noassets = true
+				@no_assets = true
 			elsif arg == "path" && value != ""
 				puts "Option: Build Path = #{value}"
 				@build_path = value
+			elsif arg == "source" && value != ""
+				puts "Option: Build Path = #{value}"
+				@source_path = value
 			elsif arg == "withstatus"
 				puts "Option: With Document Status"
-				@withstatus = true
+				@with_status = true
+			elsif arg == "buildnav"
+				puts "Option: Build Navigation Bar"
+				@build_nav = true
 			elsif arg == "files" && value != ""
 				puts "Option: Files = #{value}"
 				@build_items = value.split(" ")
@@ -146,8 +154,8 @@ module TitaniumDocs
 			end
 			docbuild.prepare_template
 			docbuild.parse_nav
-			docbuild.parse_docs
-			docbuild.move_assets
+			# docbuild.parse_docs
+			# 			docbuild.move_assets
 			
 			puts "Done!"
 		end
