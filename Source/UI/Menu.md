@@ -14,8 +14,31 @@ A Menu object
 
 ### Methods:
 
-method () : returns
+isSeparator () : returns
 : Description
+
+isItem () : returns
+: Description
+
+isSubMenu () : returns
+: Description
+
+addSeparator () : returns
+: Description
+
+addItem () : returns
+: Description
+
+addSubMenu () : returns
+: Description
+
+
+enable () : returns
+: Description
+
+disable () : returns
+: Description
+
 
 
 [UI]: /UI/UI
