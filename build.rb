@@ -154,8 +154,8 @@ module TitaniumDocs
 			end
 			docbuild.prepare_template
 			docbuild.parse_nav
-			# docbuild.parse_docs
-			# 			docbuild.move_assets
+			docbuild.parse_docs
+ 			docbuild.move_assets
 			
 			puts "Done!"
 		end
