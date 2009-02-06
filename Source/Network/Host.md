@@ -1,21 +1,35 @@
 Host {#Host}
 ============
 
-> **Document Status: Placeholder**  
-> - The contents of this document are yet to be written  
+> **Document Status: Crude**  
+> - Initial information has been written but not yet substantiated.  
 > -
-{.docstatus .placeholder}
+{.docstatus .crude}
 
 A Host Object
 
 ### See Also:
 
-[Network][]
+[Titanium.Network][]
 
 ### Methods:
 
-method () : returns
+toString () : returns
+: Description
+
+isInvalid () : returns
+: Description
+
+getName () : returns
+: Description
+
+getAliases () : returns
+: Description
+
+getAddresses () : returns
 : Description
 
 
-[Network]: /Network/Network
+
+[Titanium.Network]: /Network/Titanium.Network
+

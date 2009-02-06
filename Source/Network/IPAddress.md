@@ -1,21 +1,70 @@
 IPAddress {#IPAddress}
 ======================
 
-> **Document Status: Placeholder**  
-> - The contents of this document are yet to be written  
+> **Document Status: Crude**  
+> - Initial information has been written but not yet substantiated.  
 > -
-{.docstatus .placeholder}
+{.docstatus .crude}
 
 An IPAddress object
 
 ### See Also:
 
-[Network][]
+[Titanium.Network][]
 
 ### Methods:
 
-method () : returns
+toString () : returns
+: Description
+
+isInvalid () : returns
+: Description
+
+isIPV4 () : returns
+: Description
+
+isIPV6 () : returns
+: Description
+
+isWildcard () : returns
+: Description
+
+isBroadcast () : returns
+: Description
+
+isLoopback () : returns
+: Description
+
+isMulticast () : returns
+: Description
+
+isUnicast () : returns
+: Description
+
+isLinkLocal () : returns
+: Description
+
+isSiteLocal () : returns
+: Description
+
+isWellKnownMC () : returns
+: Description
+
+isNodeLocalMC () : returns
+: Description
+
+isLinkLocalMC () : returns
+: Description
+
+isSiteLocalMC () : returns
+: Description
+
+isOrgLocalMC () : returns
+: Description
+
+isGlobalMC () : returns
 : Description
 
 
-[Network]: /Network/Network
+
+[Titanium.Network]: /Network/Titanium.Network
