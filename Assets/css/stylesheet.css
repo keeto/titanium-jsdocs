@@ -234,6 +234,10 @@ div.clarity {
 /*	margin-top: 20px;*/
 }
 
+#footer a {
+	color: #fff;
+}
+
 /* @group Highlight */
 
 .comment { color: #333; }
