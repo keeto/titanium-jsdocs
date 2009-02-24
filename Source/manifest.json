@@ -9,7 +9,9 @@
 	
 	"Core": {
 		"Titanium": "",
-		"Titanium.App": ""
+		"Titanium.App": {
+			"Properties": ""
+		}
 	},
 
 	"Data": {
