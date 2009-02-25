@@ -1,13 +1,13 @@
 TCPSocket {#Socket}
 ===================
 
-> **Document Status: Raw**  
-> - Some of the contents of this document are based on features and functions that are not yet fully implemented.  
-> - Additional information is needed for some content.  
-> - Needs style clean-up
-{.docstatus .raw}
+A TCPSocket object is used for socket-based connections between a Titanium application and a server. TCPSocket objects can be created by using `createTCPSocket` method of the `Titanium.Network` object:
 
-A TCPSocket Object
+	var host = "127.0.0.1";
+	var port = 80;
+	var socket = Titanium.Network.createTCPSocket(host, port);
+	
+Once a TCPSocket object has been created, its `connect` method should be called to start the connection between the Titanium application and the server.
 
 ### See Also:
 
@@ -56,9 +56,13 @@ None
 
 ### Returns:
 
-- (*boolean*) True if the socket successfully connected.
+- (*boolean*) True if the socket successfully connected, false if otherwise.
 
 ### Example:
+
+	var socket = Titanium.Network.createTCPSocket("localhost", 80);
+	
+	alert( "The Socket connected " + (socket.connect()) ? "successfully." : "unsuccessfully");
 
 
 
@@ -81,6 +85,13 @@ None
 
 ### Example:
 
+	var socket = Titanium.Network.createTCPSocket("localhost", 80);
+	socket.connect();
+	
+	var closeSocket = confirm("Do you want to close the socket connection?");
+	
+	if (closeSocket) socket.close;
+
 
 
 Method: write {#TCPSocket:write}
@@ -101,6 +112,12 @@ Writes data to a socket.
 - (*boolean*) True if the data was successfully written to the socket.
 
 ### Example:
+
+	var data = "Hi Universe";
+	var socket = Titanium.Network.createTCPSocket("localhost", 80);
+	socket.connect();
+	
+	alert( "The data was written " + (socket.write(data)) ? "successfully" : "unsuccessfully" );
 
 
 
@@ -123,6 +140,11 @@ None
 
 ### Example:
 
+	var socket = Titanium.Network.createTCPSocket("localhost", 80);
+	socket.connect();
+	
+	alert(socket.isClosed());
+
 
 
 Method: onRead {#TCPSocket:onRead}
@@ -143,6 +165,11 @@ Sets a callback function to perform when a socket receives data.
 None
 
 ### Example:
+
+	var socket = Titanium.Network.createTCPSocket("localhost", 80);
+	socket.onRead(function(data){
+		alert("Socket received the following data: " + data);
+	});
 
 
 
@@ -165,6 +192,11 @@ None
 
 ### Example:
 
+	var socket = Titanium.Network.createTCPSocket("localhost", 80);
+	socket.onWrite(function(){
+		alert("Socket data is being written!");
+	});
+
 
 
 Method: onTimeout {#TCPSocket:onTimeout}
@@ -186,6 +218,11 @@ None
 
 ### Example:
 
+	var socket = Titanium.Network.createTCPSocket("localhost", 80);
+	socket.onTimeout(function(){
+		alert("Socket has timed-out!");
+	});
+
 
 
 Method: onReadComplete {#TCPSocket:onReadComplete}
@@ -206,6 +243,11 @@ Sets a callback function to perform when data has been read from the socket.
 None
 
 ### Example:
+
+	var socket = Titanium.Network.createTCPSocket("localhost", 80);
+	socket.onReadComplete(function(){
+		alert("Socket data has been read!");
+	});
 
 
 
