@@ -89,12 +89,6 @@ Take note that there is no Titanium.File namespace, nor is there a constructor f
 [parent][] ( ) : *File*
 : Returns the parent directory where the file resides.
 
-[read][] ( ) : *string*
-: Reads the content of the file.
-
-[readLine][] ( *reset* ) : *string*
-: Reads a particular line in the file's content.
-
 [resolve][] ( *path* ) : *boolean*
 : Changes the file or directory referenced by a File object.
 
@@ -106,10 +100,6 @@ Take note that there is no Titanium.File namespace, nor is there a constructor f
 
 [toString][] ( ) : *string*
 : Returns the file's properties as a string.
-
-[write][] ( *data* \[, *append*\] ) : *boolean*
-: Outputs data into a file.
-
 
 
 Method: copy {#File:copy}
@@ -475,52 +465,6 @@ None
 
 
 
-Method: read {#File:read}
--------------------------
-
-Reads the contents of a file referenced by a File Object and returns it as a string.
-
-Calling this method on a File object referencing a directory will return null.
-
-### Syntax:
-
-	File.read()
-
-### Arguments:
-
-None
-
-### Returns:
-
-- (*string* or *null*) A string containing the contents of the file or null if the File object references a directory.
-
-### Example:
-
-
-
-Method: readLine {#File:readLine}
----------------------------------
-
-Reads a file referenced by a File object line by line.
-
-Calling this method on a File object referencing a directory will return null.
-
-### Syntax:
-
-	File.readLine(reset)
-
-### Arguments:
-
-1. reset - (*boolean*: defaults to false) Setting this to true will reset the pointer to the first line of the file.
-
-### Returns:
-
-- (*string*) The contents of the line of a file.
-
-### Example:
-
-
-
 Method: resolve {#File:resolve}
 -------------------------------
 
@@ -607,28 +551,6 @@ None
 
 
 
-Method: write {#File:write}
----------------------------
-
-Writes data to a file.
-
-### Syntax:
-
-	File.write(data [, append])
-
-### Arguments:
-
-1. data - (*string*) The data to be written to the file.
-2. append - (*boolean*: optional, defaults to false) Whether to append the data at the end of the file. Setting this to false will overwrite anything on the file.
-
-### Returns:
-
-- (*boolean*) True if the data was successfully written to the file.
-
-### Example:
-
-
-
 [copy]: #File:copy
 [createTimestamp]: #File:createTimestamp
 [createDirectory]: #File:createDirectory
@@ -646,13 +568,10 @@ Writes data to a file.
 [name]: #File:name
 [nativePath]: #File:nativePath
 [parent]: #File:parent
-[read]: #File:read
-[readLine]: #File:readLine
 [resolve]: #File:resolve
 [size]: #File:size
 [spaceAvailable]: #File:spaceAvailable
 [toString]: #File:toString
-[write]: #File:write
 
 [Filesystem]: /Data/Titanium.Filesystem
 [Filesystem:getFile]: /Data/Titanium.Filesystem#Titanium.Filesystem:getFile
