@@ -1,13 +1,7 @@
 Titanium.Network {#Titanium.Network}
 ====================================
 
-> **Document Status: Raw**  
-> - Some of the contents of this document are based on features and functions that are not yet fully implemented.  
-> - Additional information is needed for some content.  
-> - Needs style clean-up
-{.docstatus .raw}
-
-Titanium.Network provides functions for working with networks, as well as creating TCPSockets.
+Titanium.Network provides functions for working with networks, as well as creating TCPSocket and IRCClient objects.
 
 ### Namespace:
 
@@ -15,20 +9,26 @@ Titanium.Network provides functions for working with networks, as well as creati
 
 ### See Also:
 
-[Host][], [IPAddress][], [TCPSocket][]
+[Host][], [IPAddress][], [IRCClient][], [TCPSocket][]
 
 ### Properties:
 
-online : *boolean* \[*read-only*\]
+[online][] : *boolean* \[*read-only*\]
 : The internet connectivity state of the system.
 
 ### Methods:
 
-[createTCPSocket][] ( *host*, *port* ) : *TCPSocket*
-: Creates a new TCPSocket object.
+[addConnectivityListener][] (*handler*) : *integer*
+: Adds an event listener that will fire when the connectivity state changes.
 
 [createIPAddress][] ( *address* ) : *IPAddress*
 : Creates a new IPAddress object.
+
+[createIRCClient][] ( ) : *IRCClient*
+: Creates a new IRCClient object.
+
+[createTCPSocket][] ( *host*, *port* ) : *TCPSocket*
+: Creates a new TCPSocket object.
 
 [getHostByName][] ( *name* ) : *Host*
 : Returns a Host object referencing the host name.
@@ -36,12 +36,95 @@ online : *boolean* \[*read-only*\]
 [getHostByAddress][] ( *address* ) : *TCPSocket*
 : Returns a Host object referencing the IP address.
 
+[removeConnectivityListener][] (*id*) : *boolean*
+: Removes a connectivity event listener from the stack.
+
+
+
+Property: online {#Titanium.Network:online}
+-------------------------------------------
+
+The internet connectivity state of the system. This property equals to true if the system is connected to the internet and false if otherwise.
+
+
+
+Method: addConnectivityListener {#Titanium.Network:addConnectivityListener}
+---------------------------------------------------------------------------
+
+Adds an event listener that will fire when the connectivity state changes.
+
+### Syntax:
+
+	Titanium.Network.addConnectivityListener(handler)
+	
+### Arguments:
+
+1. handler - (*function*) The event handler function to fire.
+
+### Returns:
+
+- (*integer*) The id of the event listener
+
+### Example:
+
+	var myListener = Titanium.Network.addConnectivityListener(function(){
+		alert("Connectivity State Changed!");
+	});
+	
+	alert("myListener ID is " + myListener);
+
+
+
+Method: createIPAddress {#Titanium.Network:createIPAddress}
+-----------------------------------------------------------
+
+Creates a new [IPAddress][] object.
+
+### Syntax:
+
+	Titanium.Network.createIPAddress(address)
+	
+### Arguments:
+
+1. address - (*string*) The IP address
+
+### Returns:
+
+- (*IPAddress*) A new IPAddress object
+
+### Example:
+
+	var myIP = Titanium.Network.createIPAddress("127.0.0.1");
+
+
+
+Method: createIRCClient {#Titanium.Network:createIRCClient}
+-----------------------------------------------------------
+
+Creates a new [IRCClient][] object.
+
+### Syntax:
+
+	Titanium.Network.createIRCClient()
+	
+### Arguments:
+
+None
+
+### Returns:
+
+- (*IRCClient*) A new IRCClient object
+
+### Example:
+
+	var myIRC = Titanium.Network.createIRCClient();
+
 
 
 Method: createTCPSocket {#Titanium.Network:createTCPSocket}
--------------------------
+-----------------------------------------------------------
 
-Creates a new TCPSocket object.
+Creates a new [TCPSocket][] object.
 
 ### Syntax:
 
@@ -58,33 +141,14 @@ Creates a new TCPSocket object.
 
 ### Example:
 
-
-
-Method: createIPAddress {#Titanium.Network:createIPAddress}
--------------------------
-
-Creates a new IPAddress object.
-
-### Syntax:
-
-	Titanium.Network.createIPAddress(address)
-	
-### Arguments:
-
-1. address - (*string*) The IP address
-
-### Returns:
-
-- (*IPAddress*) A new IPAddress object
-
-### Example:
+	var mySocket = Titanium.Network.createTCPSocket("127.0.0.1", 8000);
 
 
 
 Method: getHostByName {#Titanium.Network:getHostByName}
--------------------------
+-------------------------------------------------------
 
-Returns a Host object referencing a host name
+Returns a [Host][] object referencing a host name
 
 ### Syntax:
 
@@ -100,12 +164,14 @@ Returns a Host object referencing a host name
 
 ### Example:
 
+	var host = Titanium.Network.getHostByName("localhost");
 
 
-Method: createHostByAddress {#Titanium.Network:getHostByAddress}
--------------------------
 
-Returns a Host object referencing an address
+Method: getHostByAddress {#Titanium.Network:getHostByAddress}
+-------------------------------------------------------------
+
+Returns a [Host][] object referencing an IP address.
 
 ### Syntax:
 
@@ -113,21 +179,56 @@ Returns a Host object referencing an address
 	
 ### Arguments:
 
-1. address - (*address*) The server host.
+1. address - (*string*) The server host.
 
 ### Returns:
 
-- (*Host*) A Host object referencing the address
+- (*Host*) A Host object referencing the IP address.
 
 ### Example:
 
+	var host = Titanium.Network.getHostByAddress("127.0.0.1")
 
 
-[createTCPSocket]: #Titanium.Network:createTCPSocket
+
+Method: removeConnectivityListener {#Titanium.Network:removeConnectivityListener}
+---------------------------------------------------------------------------------
+
+Removes a connectivity event listener from the stack.
+
+### Syntax:
+
+	Titanium.Network.removeConnectivityListener(id)
+	
+### Arguments:
+
+1. id - (*integer*) The id of event listener to remove.
+
+### Returns:
+
+- (*boolean*) True if the event listener was successfully remove, false if otherwise.
+
+### Example:
+
+	var myListener = Titanium.Network.addConnectivityListener(function(){
+		alert("Connectivity State Changed!");
+	});
+	
+	var listen = confirm("Do you want to stop listening for events?");
+	if (listen) Titanium.Network.removeConnectivityListener(myListener);
+
+
+
+[online]: #Titanium.Network:online
+[addConnectivityListener]: #Titanium.Network:addConnectivityListener
 [createIPAddress]: #Titanium.Network:createIPAddress
+[createIRCClient]: #Titanium.Network:createIRCClient
+[createTCPSocket]: #Titanium.Network:createTCPSocket
 [getHostByName]: #Titanium.Network:getHostByName
 [getHostByAddress]: #Titanium.Network:getHostByAddress
+[removeConnectivityListener]: #Titanium.Network:removeConnectivityListener
 
 [Host]: /Network/Host
 [IPAddress]: /Network/IPAddress
+[IRCClient]: /Network/IRCClient
 [TCPSocket]: /Network/Socket
