@@ -17,7 +17,8 @@
 	"Data": {
 		"Titanium.Database": "",
 		"Titanium.Filesystem": {
-			"File": ""
+			"File": "",
+			"FileStream": ""
 		}
 	},
 

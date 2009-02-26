@@ -5,9 +5,9 @@ Welcome to the Javascript API Reference for Appcelerator Titanium PR2.
 
 This guide is divided into two parts. Part one is a short overview of the Titanium platform that introduces the basic concepts you'll need to know to develop Titanium apps using Javascript. Part two is the actual Javascript API reference containing information on all public Titanium APIs accessible via Javascript.
 
-> **Important Note!** This reference is a rough draft. The internals of the Titanium platform, the runtime implementation and Javascript API may change within the course of development and the information contained here may become invalid and unusable in the future. The official, finalized documentation will be released together with Titanium PR2.
+> **Important Note!** This reference is a rough draft. The internals of the Titanium platform, the runtime implementation and Javascript API may change within the course of development and the information contained here may become invalid and unusable in the future.
 > 
-> We are in need of your support in making this reference better. Get in touch with us via the official forums or the official irc channel for any comments, suggestions and questions. You can also look at the Contributing to this Guide section for more information.
+> We are in need of your support in making this reference better. Get in touch with us via the official forums or the official irc channel for any comments, suggestions and questions. You can also look at the Contributing to this Guide section for more information or visit the official project page on [Github][]
 
 Quick Start
 -----------
@@ -112,3 +112,5 @@ The Javascript API
 [Titanium.UI]: /UI/Titanium.UI
 [Menu]: /UI/Menu
 [Window]: /UI/Window
+
+[Github]: http://github.com/keeto/titanium-jsdocs

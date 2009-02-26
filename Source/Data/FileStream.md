@@ -1,30 +1,21 @@
 FileStream {#FileStream}
-============
+========================
 
-> **Document Status: Raw**  
-> - Some of the contents of this document are based on features and functions that are not yet fully implemented.  
-> - Additional information is needed for some content.  
-> - Needs style clean-up
-{.docstatus .raw}
-
-A FileStream object is used to read/write date to a file.  FileStream objects can be created by passing a path to the [getFileStream()][Filesystem:getFileStream] function under [Titanium.Filesystem][Filesystem]:
+A FileStream object is used to read and write data to a file. FileStream objects can be created by passing a path to the [getFileStream()][Filesystem:getFileStream] function under [Titanium.Filesystem][Filesystem]:
 
 	// Creating a FileStream object..
 	var filePath = "C:/My Documents/MyFile.txt";
 	var fileStream = Titanium.Filesystem.getFileStream(filePath);
 
-Take note that there is no Titanium.FileStream namespace, nor is there a constructor function or a FileStream class, so the following lines won't work:
+FileStream objects can also be created by directly passing [File][] objects:
 
-	// There's no Titanium.FileStream..
-	var myFileStream = Titanium.FileStream(path);
-
-	// Do not use "new" because getFileStream is not a
-	// constructor function..
-	var myFileStream2 = new Titanium.Filesystem.getFileStream(url);
+	// Passing a file object to FileStreams
+	var file = Titanium.FileSystem.getFile("C:/My Documents/MyFile.txt");
+	var fileStream = Titanium.Filesystem.getFileStream(file);
 
 ### See Also:
 
-[Filesystem][]
+[Filesystem][], [File][]
 
 ### Methods:
 
@@ -117,7 +108,9 @@ Writes data to a file.
 [readLine]: #FileStream:readLine
 [write]: #FileStream:write
 
+[File]: /Data/File
 [Filesystem]: /Data/Titanium.Filesystem
 [Filesystem:getFile]: /Data/Titanium.Filesystem#Titanium.Filesystem:getFile
+[Filesystem:getFileStream]: /Data/Titanium.Filesystem#Titanium.Filesystem:getFileStream
 [Filesystem:getUserDirectory]: /Data/Titanium.Filesystem#Titanium.Filesystem:getUserDirectory
 [Filesystem:getDesktopDirectory]: /Data/Titanium.Filesystem#Titanium.Filesystem:getDesktopDirectory
