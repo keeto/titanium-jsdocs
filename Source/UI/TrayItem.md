@@ -6,13 +6,13 @@ TrayItem object
 ### Methods:
 
 setIcon () : *boolean*
-: Starts a socket connection.
+: Sets the icon for the tray item.
 
 setMenu () : *boolean*
-: Starts a socket connection.
+: Sets a menu for the tray item.
 
 setHint () : *boolean*
-: Starts a socket connection.
+: Sets the tool tip displayed for the tray item.
 
 remove () : *boolean*
-: Starts a socket connection.
+: Removes the tray item from the system tray.
