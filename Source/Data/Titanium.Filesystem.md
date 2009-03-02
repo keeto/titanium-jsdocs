@@ -28,6 +28,9 @@ Titanium.Filesystem provides functions for creating [File][] objects as well as 
 [getFile][] (*path*) : *File*
 : Creates a new File object.
 
+[getFileStream][] (*path*) : *FileStream*
+: Creates a new FileStream object.
+
 [getApplicationDirectory][] (): *File*
 : Returns a File object referencing the directory where the Titanium app is located.
 
@@ -112,6 +115,27 @@ Creates a new File object
 ### Returns:
 
 - (*File*) A File object referencing a file or diirectory.
+
+### Example:
+
+
+
+Method: getFileStream {#Titanium.Filesystem:getFileStream}
+----------------------------------------------
+
+Creates a new FileStream object
+
+### Syntax:
+
+	Titanium.Filesystem.getFileStream(path)
+
+### Arguments:
+
+1. path - (*string*) The path to the file or directory to be referenced by the by FileStream object.
+
+### Returns:
+
+- (*FileStream*) A FileStream object referencing a file.
 
 ### Example:
 
@@ -288,6 +312,7 @@ None
 [createTempFile]: #Titanium.Filesystem:createTempFile
 [createTempDirectory]: #Titanium.Filesystem:createTempDirectory
 [getFile]: #Titanium.Filesystem:getFile
+[getFileStream]: #Titanium.Filesystem:getFileStream
 [getApplicationDirectory]: #Titanium.Filesystem:getApplicationDirectory
 [getResourcesDirectory]: #Titanium.Filesystem:getResourcesDirectory
 [getDesktopDirectory]: #Titanium.Filesystem:getDesktopDirectory
