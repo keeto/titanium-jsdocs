@@ -87,10 +87,10 @@ The Javascript API
 
 
 
-[Titanium]: /Overview/Titanium
+[Titanium]: /Overview/Introduction
 [Organization]: /Overview/Organization
 [Contributing]: /Overview/Contributing
-[License]: /Overview/Licens
+[License]: /Overview/License
 
 [Titanium.Database]: /Data/Titanium.Database
 [Titanium.Filesystem]: /Data/Titanium.Filesystem
